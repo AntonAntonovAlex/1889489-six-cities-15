@@ -15,7 +15,7 @@ describe('SixCitiesProcess selectors', () => {
     expect(result).toBe(city);
   });
 
-  it('should return sortingType from state', () => {
+  it('should return sorting type from state', () => {
     const { sortingType } = state[NameSpace.Sixities];
     const result = getSortingType(state);
     expect(result).toBe(sortingType);
