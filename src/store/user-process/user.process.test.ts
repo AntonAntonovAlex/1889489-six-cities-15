@@ -34,10 +34,10 @@ describe('UserProcess Slice', () => {
     };
     const expectedState = {
       authorizationStatus: AuthorizationStatus.Auth,
-      userName: undefined,
+      userName: '',
     };
 
-    const result = userProcess.reducer(initialState, checkAuthAction.fulfilled);
+    const result = userProcess.reducer(initialState, checkAuthAction.fulfilled('', '', undefined));
 
     expect(result).toEqual(expectedState);
   });
@@ -64,10 +64,10 @@ describe('UserProcess Slice', () => {
     };
     const expectedState = {
       authorizationStatus: AuthorizationStatus.Auth,
-      userName: undefined,
+      userName: '',
     };
 
-    const result = userProcess.reducer(initialState, loginAction.fulfilled);
+    const result = userProcess.reducer(initialState, loginAction.fulfilled('', '', {login: '', password: ''}));
 
     expect(result).toEqual(expectedState);
   });
