@@ -1,5 +1,11 @@
+import { ThunkDispatch } from 'redux-thunk';
 import { Comments, Offer, OfferId } from '../types/offer';
 import {lorem, datatype, image, address} from 'faker';
+import { Action } from 'redux';
+import { createAPI } from '../services/api';
+import { State } from '../types/state';
+
+export type AppThunkDispatch = ThunkDispatch<State, ReturnType<typeof createAPI>, Action>;
 
 export const makeFakeOffer = (): Offer => ({
   id: datatype.string(),
@@ -69,3 +75,5 @@ export const makeFakeComments = (): Comments => ({
   comment: lorem.text(),
   rating: datatype.number(),
 } as Comments);
+
+export const extractActionsTypes = (actions: Action<string>[]) => actions.map(({ type }) => type);
