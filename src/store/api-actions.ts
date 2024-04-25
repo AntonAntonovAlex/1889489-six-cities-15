@@ -43,8 +43,6 @@ export const fetchChangeSatusFavoriteOfferAction = createAsyncThunk<void, Change
   'data/fetchChangeSatusFavoriteOffer',
   async ({offerId, status}, {extra: api}) => {
     await api.post(`${APIRoute.Favorite}/${offerId}/${status}`);
-    //const {data} = await api.get<Comments[]>(`${APIRoute.Comments}${offerId}`);
-    //return data;
   },
 );
 
