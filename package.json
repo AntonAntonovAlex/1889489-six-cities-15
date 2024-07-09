@@ -46,7 +46,7 @@
     "faker": "5.5.3",
     "jsdom": "22.1.0",
     "typescript": "5.2.2",
-    "vitest": "0.34.6"
+    "vitest": "1.4.0"
   },
   "browserslist": {
     "production": [
